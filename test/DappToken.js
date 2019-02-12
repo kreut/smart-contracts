@@ -4,11 +4,11 @@ var DappToken = artifacts.require("./DappToken.sol");
 
 contract("DappToken", accounts => {
   let tokenInstance;
-    beforeEach('setup contract for each test', async function () {
+    beforeEach('setup contract for each test', async () => {
         tokenInstance = await DappToken.deployed();
     });
 
-  it("initializes the contract with the correct values", async () =>{
+  it("initializes the contract with the correct values", async () => {
     let name = await tokenInstance.name();
     assert.equal("Dapp Token", name, "it returns the correct name");
 
